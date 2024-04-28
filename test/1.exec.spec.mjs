@@ -16,8 +16,8 @@ describe('执行 action', () => {
     const ActionB = generateSimpleAction(data);
 
     before(async () => {
-        const actionA = new ActionA({ count: 2, tag: 'a', });
-        const actionB = new ActionB({ count: 4, tag: 'b', });
+        const actionA = new ActionA({ count: 2, tag: 'a' });
+        const actionB = new ActionB({ count: 4, tag: 'b' });
 
         await queue.exec(actionA); // 0 -> 2
         await queue.exec(actionB); // 2 -> 4

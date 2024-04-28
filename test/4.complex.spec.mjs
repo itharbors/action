@@ -16,10 +16,10 @@ describe('exec*4 undo redo undo undo', () => {
     const ActionB = generateSimpleAction(data);
 
     before(async () => {
-        const actionA = new ActionA({ count: 2, tag: 'a',  });
-        const actionB = new ActionB({ count: 4, tag: 'b',  });
-        const actionC = new ActionB({ count: 6, tag: 'c',  });
-        const actionD = new ActionB({ count: 8, tag: 'd',  });
+        const actionA = new ActionA({ count: 2, tag: 'a' });
+        const actionB = new ActionB({ count: 4, tag: 'b' });
+        const actionC = new ActionB({ count: 6, tag: 'c' });
+        const actionD = new ActionB({ count: 8, tag: 'd' });
 
         await queue.exec(actionA); // a  0 -> 2
         await queue.exec(actionB); // b  2 -> 4
@@ -55,10 +55,10 @@ describe('exec*4 undo redo redo undo', () => {
     const ActionB = generateSimpleAction(data);
 
     before(async () => {
-        const actionA = new ActionA({ count: 2, tag: 'a',  });
-        const actionB = new ActionB({ count: 4, tag: 'b',  });
-        const actionC = new ActionB({ count: 6, tag: 'c',  });
-        const actionD = new ActionB({ count: 8, tag: 'd',  });
+        const actionA = new ActionA({ count: 2, tag: 'a' });
+        const actionB = new ActionB({ count: 4, tag: 'b' });
+        const actionC = new ActionB({ count: 6, tag: 'c' });
+        const actionD = new ActionB({ count: 8, tag: 'd' });
 
         await queue.exec(actionA); // a  0 -> 2
         await queue.exec(actionB); // b  2 -> 4
@@ -95,8 +95,8 @@ describe('exec undo exec  undo undo', () => {
     const ActionB = generateSimpleAction(data);
 
     before(async () => {
-        const actionA = new ActionA({ count: 2, tag: 'a',  });
-        const actionB = new ActionB({ count: 4, tag: 'b',  });
+        const actionA = new ActionA({ count: 2, tag: 'a' });
+        const actionB = new ActionB({ count: 4, tag: 'b' });
 
         await queue.exec(actionA); // a  0 -> 2
         await queue.undo();        // a' 2 -> 0
@@ -126,8 +126,8 @@ describe('exec undo exec redo', () => {
     const ActionB = generateSimpleAction(data);
 
     before(async () => {
-        const actionA = new ActionA({ count: 2, tag: 'a',  });
-        const actionB = new ActionB({ count: 4, tag: 'b',  });
+        const actionA = new ActionA({ count: 2, tag: 'a' });
+        const actionB = new ActionB({ count: 4, tag: 'b' });
 
         await queue.exec(actionA); // a  0 -> 2
         await queue.undo();        // a' 2 -> 0
